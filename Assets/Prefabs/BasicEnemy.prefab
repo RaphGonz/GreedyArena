@@ -53,7 +53,6 @@ MonoBehaviour:
   MaxHealth: 3
   Damage: 0
   Speed: 3
-  WaitTime: 3
 --- !u!61 &8212411976902543895
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +141,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fbc097c12251c3b4d8b972cbc9ef6b02, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.7323432, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
