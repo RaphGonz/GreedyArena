@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour
     [System.Serializable]
     public class Wave
     {
-        public Transform enemy;
+        public Transform[] enemy;
         public int count;
         public float rate;
     }
@@ -101,7 +101,8 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.enemy);
+            int randEnemy = Random.Range(0, _wave.enemy.Length);
+            SpawnEnemy(_wave.enemy[randEnemy]);
             yield return new WaitForSeconds(1f / _wave.rate);
         }
 
@@ -117,8 +118,6 @@ public class WaveSpawner : MonoBehaviour
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
         Instantiate(_enemy, _sp.position, _sp.rotation);
-
-        //Spawn enemy
 
     }
 

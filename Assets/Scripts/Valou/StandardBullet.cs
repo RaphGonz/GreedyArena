@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Guillaume;
 using UnityEngine;
 
 public class StandardBullet : Bullet
@@ -8,5 +9,14 @@ public class StandardBullet : Bullet
     protected override Vector2 NewPosition(float dt)
     {
         return new Vector2(transform.position.x + Velocity.x * dt, transform.position.y + Velocity.y * dt);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.transform.tag.Equals(TargetTag))
+        {
+            collision.gameObject.GetComponent<Entity>().TakeDamage(Damage);
+        }
+        Destroy(gameObject);
     }
 }
