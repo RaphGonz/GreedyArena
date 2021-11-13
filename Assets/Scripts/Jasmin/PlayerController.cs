@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     // weapons
     [SerializeField] Weapon weapon;
     [SerializeField] Vector2 _shootingDirection;
+    [SerializeField] float _weaponEjectionForce = 5;
 
     // body of the player (sprite)
     [SerializeField] GameObject body;
@@ -113,14 +114,22 @@ public class PlayerController : MonoBehaviour
         float angleArms = Vector2.SignedAngle(new Vector2(1,0), _shootingDirection);
 
 
+
+
+
         if (angleArms > 90 || angleArms < -90)
         {
             body.transform.localScale = new Vector2(-1, 1);
+            pivotPoint.transform.localScale = new Vector2(-1, 1);
+            angleArms += 180;
         }
         else
         {
             body.transform.localScale = new Vector2(1, 1);
+            pivotPoint.transform.localScale = new Vector2(1, 1);
         }
+
+        
 
         Quaternion rotationArms = Quaternion.Euler(0, 0, angleArms);
         pivotPoint.transform.rotation = rotationArms;
@@ -134,6 +143,29 @@ public class PlayerController : MonoBehaviour
     public void Shoot()
     {
         weapon.Shoot(_shootingDirection);
+    }
+
+
+    private void ChangeWeapon(GameObject newWeapon)
+    {
+        newWeapon.transform.position = new Vector2(0, 0);
+        newWeapon.transform.parent = pivotPoint.transform;
+        newWeapon.GetComponent<Rigidbody2D>().isKinematic = true;
+        
+
+        weapon.transform.parent = null;
+        weapon.GetComponent<Rigidbody2D>().isKinematic = false;
+        weapon.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1,1) * _weaponEjectionForce);
+
+        weapon = newWeapon.GetComponent<Weapon>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Weapon"))
+        {
+            ChangeWeapon(collision.gameObject);
+        }
     }
 
 }
