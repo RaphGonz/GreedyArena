@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,17 +13,30 @@ public abstract class Bullet : MonoBehaviour
      
      public Vector2 Velocity;
 
-     public int dammage;
+     public int Damage;
+
+     public float Lifetime;
+
+     private float _startTime;
+
+     public String TargetTag;
 
      void Start()
      {
           body = GetComponent<Rigidbody2D>();
+          _startTime = Time.time;
      }
 
      void Update()
      {
-          Vector2 newPos = NewPosition(Time.deltaTime);
-          transform.position = newPos;
+          if (Time.time - _startTime > Lifetime)
+          {
+               Destroy(gameObject);
+          }
+          else
+          {
+               Vector2 newPos = NewPosition(Time.deltaTime);
+               transform.position = newPos;
+          }
      }
-    
 }
