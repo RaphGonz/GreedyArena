@@ -9,12 +9,8 @@ public class BasicEnemy : Entity
 {
     public GameObject Target;
     private Transform _targetTransform;
-    
+
     public Vector2 Destination;
-
-
-    public int MaxHealth;
-    private int _health;
 
     public int Damage;
     public float Speed;
@@ -26,7 +22,6 @@ public class BasicEnemy : Entity
         Target = GameObject.Find("Player");
         _targetTransform = Target.GetComponent<Transform>();
         Destination = _targetTransform.position;
-        _health = MaxHealth;
         Debug.Log("Speed  = " + Speed + " | Last Destination = " + Destination);
     }
 
@@ -46,7 +41,7 @@ public class BasicEnemy : Entity
         transform.position = newPosition;
     }
 
-    public override void TakeDamage(int damage)
+public override void TakeDamage(int damage)
     {
         _health -= damage;
         if (_health <= 0)
