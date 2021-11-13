@@ -14,6 +14,8 @@ public abstract class Bullet : MonoBehaviour
 
      public int dammage;
 
+     public float lifetime;
+
      void Start()
      {
           body = GetComponent<Rigidbody2D>();
