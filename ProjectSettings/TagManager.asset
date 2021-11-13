@@ -10,6 +10,7 @@ TagManager:
   - Solid
   - EnemyBody
   - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
