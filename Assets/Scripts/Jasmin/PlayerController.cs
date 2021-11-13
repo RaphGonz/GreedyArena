@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask _maskSolid;
 
     // weapons
-    [SerializeField] GameObject weapon;
+    [SerializeField] Weapon weapon;
     [SerializeField] Vector2 _shootingDirection;
 
     // body of the player (sprite)
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot()
     {
-
+        weapon.Shoot(_shootingDirection);
     }
 
 }
