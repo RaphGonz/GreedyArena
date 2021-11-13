@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Raphael-MenuStart.unity
     guid: 0ce59bb7f33afa64687a040ea1128062
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: f5fc30cd0329cc5429493216941bc508
   m_configObjects: {}
