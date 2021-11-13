@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+
+    public Animator animator;
+
     [SerializeField] PlayerController playerController;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,8 @@ public class InputManager : MonoBehaviour
     void UpdateInput()
     {
         float xValue = Input.GetAxis("Horizontal");
+
+        animator.SetFloat("speed", Mathf.Abs(xValue));
 
         if (Mathf.Abs(xValue) > 0.1f)
         {
