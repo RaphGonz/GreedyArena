@@ -41,7 +41,7 @@ public class BasicEnemy : Entity
         transform.position = newPosition;
     }
 
-public override void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
         _health -= damage;
         if (_health <= 0)
