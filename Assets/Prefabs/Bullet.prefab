@@ -100,9 +100,9 @@ MonoBehaviour:
   body: {fileID: 0}
   Speed: 5
   Velocity: {x: 0, y: 0}
-  Dammage: 1
+  Damage: 2
   Lifetime: 1
-  TargetTag: 
+  TargetTag: Enemy
 --- !u!50 &6782443470646310328
 Rigidbody2D:
   serializedVersion: 4

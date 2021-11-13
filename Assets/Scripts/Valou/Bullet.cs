@@ -13,7 +13,7 @@ public abstract class Bullet : MonoBehaviour
      
      public Vector2 Velocity;
 
-     public int Dammage;
+     public int Damage;
 
      public float Lifetime;
 

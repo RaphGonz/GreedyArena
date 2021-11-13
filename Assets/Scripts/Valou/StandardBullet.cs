@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Guillaume;
 using UnityEngine;
 
 public class StandardBullet : Bullet
@@ -12,10 +13,9 @@ public class StandardBullet : Bullet
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("Bonk");
         if (collision.collider.transform.tag.Equals(TargetTag))
         {
-            // collision.gameObject.GetComponent<Entity>().TakeDammage(Dammage);
+            collision.gameObject.GetComponent<Entity>().TakeDamage(Damage);
         }
         Destroy(gameObject);
     }
