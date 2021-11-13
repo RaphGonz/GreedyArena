@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c290b4f29ac9c6a479107617910a6fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 3
   Target: {fileID: 0}
   Destination: {x: 0, y: 0}
   MaxHealth: 3
@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &8212411976902543890
 SpriteRenderer:
   m_ObjectHideFlags: 0
