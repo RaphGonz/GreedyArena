@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D playerRigidbody;
     [SerializeField] BoxCollider2D playerCollider;
     [SerializeField] GameObject pivotPoint;
+    [SerializeField] RacoonManager racoon;
 
     // Movement config on the X axis
     [SerializeField] float _xForce = 100;
@@ -162,6 +163,7 @@ public class PlayerController : MonoBehaviour
         weapon.GetComponent<Rigidbody2D>().freezeRotation = false;
         weapon.gameObject.layer = LayerMask.NameToLayer("WeaponTrash");
         weapon = newWeapon.GetComponent<Weapon>();
+        racoon.TriggerRacoon();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
