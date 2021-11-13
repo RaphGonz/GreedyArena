@@ -21,7 +21,7 @@ public abstract class Weapon : MonoBehaviour
             // fire bullet
             GameObject newBulletGameObject = Instantiate(BulletGameObject, canon.position, transform.rotation);
             Bullet newBullet = newBulletGameObject.GetComponent<Bullet>();
-            newBullet.Velocity = newBullet.Speed * direction.normalized;
+            newBullet.gameObject.GetComponent<Rigidbody2D>().AddForce(newBullet.Speed * direction.normalized, ForceMode2D.Impulse);
             
             // update lastUse timer to handle cooldown of fire rate
             nextAllowedFire = currentUse + 1.0f / fireRate;

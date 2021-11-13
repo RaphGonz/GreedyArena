@@ -23,9 +23,9 @@ TagManager:
   - PlayerBody
   - EnemyBullet
   - PlayerBullet
-  - 
-  - 
-  - 
+  - Weapon
+  - WeaponTrash
+  - SolidGround
   - 
   - 
   - 
