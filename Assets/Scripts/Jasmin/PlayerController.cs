@@ -162,6 +162,7 @@ public class PlayerController : MonoBehaviour
         weapon.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1,1) * _weaponEjectionForce);
         weapon.GetComponent<Rigidbody2D>().freezeRotation = false;
         weapon.gameObject.layer = LayerMask.NameToLayer("WeaponTrash");
+        weapon.GetComponent<Animator>().SetBool("isHeld", false);
         weapon = newWeapon.GetComponent<Weapon>();
         racoon.TriggerRacoon();
     }
