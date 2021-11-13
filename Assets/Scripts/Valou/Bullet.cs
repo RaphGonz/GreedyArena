@@ -5,13 +5,7 @@ using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour
 {
-     protected abstract Vector2 NewPosition(float dt);
-     
-     public Rigidbody2D body;
-
-     public float Speed; 
-     
-     public Vector2 Velocity;
+     public float Speed;
 
      public int Damage;
 
@@ -23,7 +17,6 @@ public abstract class Bullet : MonoBehaviour
 
      void Start()
      {
-          body = GetComponent<Rigidbody2D>();
           _startTime = Time.time;
      }
 
@@ -33,10 +26,7 @@ public abstract class Bullet : MonoBehaviour
           {
                Destroy(gameObject);
           }
-          else
-          {
-               Vector2 newPos = NewPosition(Time.deltaTime);
-               transform.position = newPos;
-          }
      }
+
+     protected abstract void OnCollisionEnter2D(Collision2D collision);
 }
