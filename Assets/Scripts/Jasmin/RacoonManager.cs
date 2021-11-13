@@ -55,9 +55,11 @@ public class RacoonManager : MonoBehaviour
                 inAnimation = false;
 
                 // ces trois lignes permettent de reset le racoon
+                /*
                 rigidbody.velocity = new Vector2(0, 0);
                 moving = false;
                 transform.position = initialPosition;
+                */
             }
         }
 
