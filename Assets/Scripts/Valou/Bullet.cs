@@ -39,6 +39,4 @@ public abstract class Bullet : MonoBehaviour
                transform.position = newPos;
           }
      }
-
-     protected abstract void OnCollisionEnter(Collision collision);
 }

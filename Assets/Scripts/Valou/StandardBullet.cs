@@ -10,11 +10,13 @@ public class StandardBullet : Bullet
         return new Vector2(transform.position.x + Velocity.x * dt, transform.position.y + Velocity.y * dt);
     }
 
-    protected override void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        print("Bonk");
         if (collision.collider.transform.tag.Equals(TargetTag))
         {
-            // collision.gameObject.GetComponent<>();
+            // collision.gameObject.GetComponent<Entity>().TakeDammage(Dammage);
         }
+        Destroy(gameObject);
     }
 }
