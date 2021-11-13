@@ -11,7 +11,6 @@ public class BasicEnemy : Entity
     private Transform _targetTransform;
     
     public Vector2 Destination;
-    private bool _destinationReached = false;
 
 
     public int MaxHealth;
@@ -19,10 +18,6 @@ public class BasicEnemy : Entity
 
     public int Damage;
     public float Speed;
-
-    private float _elapsedTime = 0;
-    public float WaitTime;
-    private float _timeToWait;
 
 
     // Start is called before the first frame update
@@ -38,34 +33,17 @@ public class BasicEnemy : Entity
     // Update is called once per frame
     void Update()
     {
-        _elapsedTime += Time.deltaTime;
         float step = Time.deltaTime * Speed;
         Behaviour(Time.deltaTime);
     }
 
     private void Behaviour(float deltaTime)
     {
-        if (!_destinationReached)
-        {
-            var position = transform.position;
-            Vector3 lastPosition = position;
-            float step = Speed * deltaTime;
-            Vector3 newPosition = Vector3.MoveTowards(position, Destination, step);
-            transform.position = newPosition;
-
-            if (lastPosition.Equals(newPosition))
-            {
-                Debug.Log("Last position " + lastPosition + " | "+newPosition);
-                _destinationReached = true;
-                _timeToWait = _elapsedTime + WaitTime;
-            }
-        }
-        else if (_elapsedTime > _timeToWait)
-        {
-            Destination = _targetTransform.position;
-            Debug.Log("New Destination = " + Destination);
-            _destinationReached = false;
-        }
+        var position = transform.position;
+        Vector3 lastPosition = position;
+        float step = Speed * deltaTime;
+        Vector3 newPosition = Vector3.MoveTowards(position, _targetTransform.position, step);
+        transform.position = newPosition;
     }
 
     public override void TakeDamage(int damage)

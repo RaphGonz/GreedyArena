@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c290b4f29ac9c6a479107617910a6fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   Target: {fileID: 0}
   Destination: {x: 0, y: 0}
   MaxHealth: 3
   Damage: 0
-  Speed: 5
+  Speed: 3
   WaitTime: 3
 --- !u!61 &8212411976902543895
 BoxCollider2D:
