@@ -57,14 +57,10 @@ public class BasicEnemy : Entity
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("PlayerBody"))
+        if (collision.gameObject.tag.Equals("PlayerBody"))
         {
             Debug.Log("Oof !");
-            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-            // Jasmin, ici pour prendre des dégâts
-            //
-            // collision.gameObject.TakeDamage
-            // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            collision.gameObject.GetComponent<Entity>().TakeDamage(1);
         }
     }
 }
