@@ -19,11 +19,14 @@ public class RacoonManager : MonoBehaviour
 
     [SerializeField] List<GameObject> weaponList;
 
+    public Animator animator;
 
+    private bool stolen;
 
     // Start is called before the first frame update
     void Start()
     {
+        stolen = false;
         initialPosition = transform.position;
         weaponList = new List<GameObject>(10);
     }
@@ -68,7 +71,12 @@ public class RacoonManager : MonoBehaviour
             rigidbody.velocity = new Vector2(0, 0);
             moving = false;
             transform.position = initialPosition;
+            animator.SetBool("recover", false);
+            stolen = false;
         }
+
+        animator.SetFloat("speed", Mathf.Abs(rigidbody.velocity.x));
+
     }
 
     public void TriggerRacoon()
@@ -79,13 +87,14 @@ public class RacoonManager : MonoBehaviour
 
     void StartAnimation()
     {
-
+        animator.SetBool("recover", true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Weapon"))
+        if (collision.gameObject.CompareTag("Weapon") && !stolen)
         {
+            stolen = true;
             rigidbody.velocity = new Vector2(0, 0);
             StartAnimation();
             inAnimation = true;
