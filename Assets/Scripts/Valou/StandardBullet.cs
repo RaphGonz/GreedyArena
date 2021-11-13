@@ -9,4 +9,12 @@ public class StandardBullet : Bullet
     {
         return new Vector2(transform.position.x + Velocity.x * dt, transform.position.y + Velocity.y * dt);
     }
+
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.transform.tag.Equals(TargetTag))
+        {
+            // collision.gameObject.GetComponent<>();
+        }
+    }
 }
