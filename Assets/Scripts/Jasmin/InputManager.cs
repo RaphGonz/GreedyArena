@@ -32,7 +32,9 @@ public class InputManager : MonoBehaviour
             playerController.Jump();
         }
 
-        playerController.RotatePivotPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        playerController.RotatePivotPoint(UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+        
         //Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
         if (Input.GetMouseButton(0))
