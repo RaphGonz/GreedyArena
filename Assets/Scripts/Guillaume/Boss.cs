@@ -21,10 +21,13 @@ public class Boss : Entity
 
     private StringBuilder _attitude = new StringBuilder("hostile");
 
+    private float _elapsedTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        _health = maxHealth;
+        _activeWeapons = new Weapon[] {Weapons[0], Weapons[1]};
     }
 
     // Update is called once per frame
@@ -58,23 +61,26 @@ public class Boss : Entity
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        _elapsedTime += Time.deltaTime;
+        if (_elapsedTime > 1)
         {
             Shoot();
+            _elapsedTime = 0;
         }
     }
 
 
-    public void Shoot()
-    {
-        if (_activeWeapons.Length > 0)
+        public void Shoot()
         {
-            foreach (var weapon in _activeWeapons)
+            if (_activeWeapons.Length > 0)
             {
-                weapon.Shoot(_shootingDirection);
+                foreach (var weapon in _activeWeapons)
+                {
+                    Debug.Log("Boss Shoot : Pew Pew Pew");
+                    weapon.Shoot(_shootingDirection);
+                }
             }
         }
-    }
 
     public override void TakeDamage(int damage)
     {

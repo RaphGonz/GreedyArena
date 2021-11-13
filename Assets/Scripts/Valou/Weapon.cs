@@ -25,10 +25,10 @@ public abstract class Weapon : MonoBehaviour
 
     public void Shoot(Vector2 direction)
     {
-        //À mettre dans le void Start quand il fonctionnera (quand la classe ne sera plus abstraite).
+        //Ã€ mettre dans le void Start quand il fonctionnera (quand la classe ne sera plus abstraite).
         if (!start)
         {
-            //isHeld devra commencer à false
+            //isHeld devra commencer Ã  false
             animator.SetBool("isHeld", true);
             animator.SetBool("isShooting", false);
             start = true;
