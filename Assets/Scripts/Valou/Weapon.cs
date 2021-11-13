@@ -37,7 +37,7 @@ public abstract class Weapon : MonoBehaviour
         float currentUse = Time.time;
         if (currentUse >= nextAllowedFire)
         {
-            animator.SetBool("isShooting", true);
+            StartCoroutine(shootingAnimation());
             // fire bullet
             GameObject newBulletGameObject = Instantiate(BulletGameObject, canon.position, transform.rotation);
             Bullet newBullet = newBulletGameObject.GetComponent<Bullet>();
@@ -45,11 +45,15 @@ public abstract class Weapon : MonoBehaviour
             
             // update lastUse timer to handle cooldown of fire rate
             nextAllowedFire = currentUse + 1.0f / fireRate;
-            //animator.SetBool("isShooting", false);
         }
     }
 
-    //IEnumerator 
+    IEnumerator shootingAnimation()
+    {
+        animator.SetBool("isShooting", true);
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("isShooting", false);
+    }
 
     // Update is called once per frame
     void Update()

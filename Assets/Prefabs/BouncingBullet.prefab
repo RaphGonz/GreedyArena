@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6974550306881250039}
   - component: {fileID: 3795686752383065406}
   - component: {fileID: 2209114580902800185}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4817,9 +4817,9 @@ GameObject:
   - component: {fileID: 6782443470646310328}
   - component: {fileID: 4348976637441759264}
   - component: {fileID: -1536622200821704136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BouncingBullet
-  m_TagString: Untagged
+  m_TagString: PlayerBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
