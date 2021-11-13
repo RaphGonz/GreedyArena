@@ -15,6 +15,9 @@ public class WaveSpawner : MonoBehaviour
         public float rate;
     }
 
+    public Transform[] weapon;
+    public Transform weaponSpawn;
+
     public Wave[] waves;
     private int nextWave = 0;
 
@@ -69,6 +72,7 @@ public class WaveSpawner : MonoBehaviour
     void WaveCompleted()
     {
         Debug.Log("Wave completed");
+        Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
