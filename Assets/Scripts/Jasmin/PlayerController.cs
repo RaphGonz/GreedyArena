@@ -156,6 +156,11 @@ public class PlayerController : Entity
         newWeapon.transform.parent = pivotPoint.transform;
         newWeapon.GetComponent<Rigidbody2D>().isKinematic = true;
         newWeapon.transform.SetPositionAndRotation(weapon.transform.position, weapon.transform.rotation);
+
+        if (pivotPoint.transform.localScale.x < 0)
+        {
+            newWeapon.transform.localScale = new Vector2(-newWeapon.transform.localScale.x, newWeapon.transform.localScale.y);
+        }
         newWeapon.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         newWeapon.layer = LayerMask.NameToLayer("Default");
 
