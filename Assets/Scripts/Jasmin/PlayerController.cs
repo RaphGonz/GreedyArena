@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Guillaume;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Entity
 {
     [SerializeField] Rigidbody2D playerRigidbody;
     [SerializeField] BoxCollider2D playerCollider;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _health = maxHealth;
         _maskSolid = LayerMask.GetMask("Solid", "SolidGround");
     }
 
@@ -184,4 +186,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public override void TakeDamage(int damage)
+    {
+        _health -= damage;
+        Debug.Log(damage+" point(s) de vie perdu(s) : current health = "+_health);
+        if (_health <= 0)
+        {
+            Debug.Log("Game Over !!");
+            //TODO: Activer le Game Over
+        }
+    }
 }
