@@ -10,6 +10,7 @@ TagManager:
   - Solid
   - EnemyBody
   - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -22,9 +23,9 @@ TagManager:
   - PlayerBody
   - EnemyBullet
   - PlayerBullet
-  - 
-  - 
-  - 
+  - Weapon
+  - WeaponTrash
+  - SolidGround
   - 
   - 
   - 

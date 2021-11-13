@@ -1,28 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour
 {
-     protected abstract Vector2 NewPosition(float dt);
-     
-     public Rigidbody2D body;
+     public float Speed;
 
-     public float Speed; 
-     
-     public Vector2 Velocity;
+     public int Damage;
 
-     public int dammage;
+     public float Lifetime;
+
+     private float _startTime;
+
+     public String TargetTag;
 
      void Start()
      {
-          body = GetComponent<Rigidbody2D>();
+          _startTime = Time.time;
      }
 
      void Update()
      {
-          Vector2 newPos = NewPosition(Time.deltaTime);
-          transform.position = newPos;
+          if (Time.time - _startTime > Lifetime)
+          {
+               Destroy(gameObject);
+          }
      }
-    
+
+     protected abstract void OnCollisionEnter2D(Collision2D collision);
 }
