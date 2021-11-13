@@ -11,7 +11,6 @@ public abstract class Weapon : MonoBehaviour
 
     public Transform canon;
     
-
     public void Shoot(Vector2 direction)
     {
         GameObject newBulletGameObject = Instantiate(BulletGameObject, canon.position, transform.rotation);
