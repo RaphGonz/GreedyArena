@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7233917458937987227}
   - component: {fileID: 793140947460939387}
   - component: {fileID: 780572988792853798}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PiercingBullet
   m_TagString: PlayerBody
   m_Icon: {fileID: 0}
