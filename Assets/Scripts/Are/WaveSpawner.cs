@@ -78,10 +78,14 @@ public class WaveSpawner : MonoBehaviour
     {
         Debug.Log("Wave completed");
 
-        uiManager.EnableDialogue(3);
-        uiManager.SetDialogueText("Oh une nouvelle arme ! va la prendre ! je récupère celle que tu jette tkt");
+        if (nextWave < 3)
+        {
+            uiManager.EnableDialogue(3);
+            uiManager.SetDialogueText("Oh une nouvelle arme ! va la prendre ! je récupère celle que tu jette tkt");
 
-        Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
+            Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
+        }
+        
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
