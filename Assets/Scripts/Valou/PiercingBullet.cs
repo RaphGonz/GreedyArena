@@ -10,6 +10,7 @@ public class PiercingBullet : Bullet
         if (collision.collider.transform.tag.Equals(TargetTag))
         {
             collision.gameObject.GetComponent<Entity>().TakeDamage(Damage);
+            Destroy(gameObject);
         }
     }
 }
