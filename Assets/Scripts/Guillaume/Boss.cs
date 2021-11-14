@@ -18,6 +18,8 @@ public class Boss : Entity
     public bool invulnerable = false;
     public SpriteRenderer bossColor;
 
+    public ParticleSystem spawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,9 @@ public class Boss : Entity
     {
         if (Time.time - timeStart > tpCooldown)
         {
+            //Animation
+            spawn.Play();
+
             currentPosition = (currentPosition + 1) % tpPositions.Length;
             transform.position = tpPositions[currentPosition];
             timeStart = Time.time;

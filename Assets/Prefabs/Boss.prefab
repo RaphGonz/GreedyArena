@@ -178,6 +178,7 @@ MonoBehaviour:
   tpCooldown: 15
   invulnerable: 0
   bossColor: {fileID: 722239888808875777}
+  spawn: {fileID: 7200084812754434667, guid: f9c0ba51cc16a3d43ac697d8c68557a8, type: 3}
 --- !u!95 &2640966299122714052
 Animator:
   serializedVersion: 3

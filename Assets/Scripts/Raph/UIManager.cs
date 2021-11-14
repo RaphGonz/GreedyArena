@@ -15,6 +15,11 @@ public class UIManager : MonoBehaviour
 
     public bool onPause = false;
 
+    public void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
     public void GameOver()
     {
         Time.timeScale = 0;
