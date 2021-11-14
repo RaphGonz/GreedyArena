@@ -36,6 +36,10 @@ public class PlayerController : Entity
 
     [SerializeField] UIManager uiManager;
 
+    //particle
+
+    public ParticleSystem jumpParticle;
+
     public bool invulnerable = false;
 
     // Start is called before the first frame update
@@ -88,6 +92,8 @@ public class PlayerController : Entity
         {
             playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, 0);
             playerRigidbody.AddForce(new Vector2(0, 1) * _jumpForce, ForceMode2D.Impulse);
+
+            jumpParticle.Play();
         }
     }
 
