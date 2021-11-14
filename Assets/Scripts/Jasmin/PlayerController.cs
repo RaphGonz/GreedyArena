@@ -9,6 +9,7 @@ public class PlayerController : Entity
     [SerializeField] BoxCollider2D playerCollider;
     [SerializeField] GameObject pivotPoint;
     [SerializeField] RacoonManager racoon;
+    [SerializeField] SpriteRenderer playerColor;
 
     // Movement config on the X axis
     [SerializeField] float _xForce = 100;
@@ -34,6 +35,8 @@ public class PlayerController : Entity
     //UI Manager : to notify death
 
     [SerializeField] UIManager uiManager;
+
+    public bool invulnerable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -198,12 +201,37 @@ public class PlayerController : Entity
 
     public override void TakeDamage(int damage)
     {
-        _health -= damage;
-        Debug.Log(damage+" point(s) de vie perdu(s) : current health = "+_health);
-        if (_health <= 0)
+
+        if (!invulnerable)
         {
-            Debug.Log("Game Over !!");
-            uiManager.GameOver();
+            StartCoroutine(inVulnerabilityFrames());
+            _health -= damage;
+            Debug.Log(damage + " point(s) de vie perdu(s) : current health = " + _health);
+            if (_health <= 0)
+            {
+                Debug.Log("Game Over !!");
+                uiManager.GameOver();
+            }
         }
+    }  
+
+    IEnumerator inVulnerabilityFrames()
+    {
+        invulnerable = true;
+        var _initialColor = playerColor.color;
+        var _color = new Color(playerColor.color.r, playerColor.color.g, playerColor.color.b, 0.2f);
+
+        for (int i = 0; i < 10; i++)
+        {
+            if(i%2==0)
+                playerColor.color = _color;
+            else
+                playerColor.color = _initialColor;
+            yield return new WaitForSeconds(0.1f);
+            
+        }
+        invulnerable = false;
     }
+
+
 }

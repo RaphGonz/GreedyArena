@@ -42,7 +42,7 @@ public class WaveSpawner : MonoBehaviour
         waveCountdown = timeBetweenWaves;
 
         uiManager.EnableDialogue(5);
-        uiManager.SetDialogueText("Aller tu les tous ! Une meilleure arme sera livree tout a l'heure...");
+        uiManager.SetDialogueText("Allez, tue les tous ! Une meilleure arme sera livree tout a l'heure...");
     }
 
     private void Update()
@@ -81,7 +81,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave < 3)
         {
             uiManager.EnableDialogue(3);
-            uiManager.SetDialogueText("Oh une nouvelle arme ! va la prendre ! je récupère celle que tu jette tkt");
+            uiManager.SetDialogueText("Oh une nouvelle arme ! Va la prendre ! Je ramasse celle que tu jette t'inquiète !");
 
             Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
         }
