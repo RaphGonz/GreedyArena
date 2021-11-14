@@ -8,11 +8,7 @@ public class InputManager : MonoBehaviour
     public Animator animator;
 
     [SerializeField] PlayerController playerController;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -46,6 +42,8 @@ public class InputManager : MonoBehaviour
         {
             playerController.Shoot();
         }
+
+
     }
 
 }
