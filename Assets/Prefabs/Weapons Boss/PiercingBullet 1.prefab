@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  Damage: 2
+  Damage: 3
   Lifetime: 1
   TargetTag: Enemy
 --- !u!212 &780572988792853798

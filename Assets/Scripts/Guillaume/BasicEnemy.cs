@@ -12,6 +12,8 @@ public class BasicEnemy : Entity
     public int Damage;
     public float Speed;
 
+    public SpriteRenderer monsterSprite;
+
     private Rigidbody2D _body;
 
 
@@ -35,6 +37,7 @@ public class BasicEnemy : Entity
 
     public override void TakeDamage(int damage)
     {
+        StartCoroutine(takingDamage());
         _health -= damage;
         if (_health <= 0)
         {
@@ -48,6 +51,23 @@ public class BasicEnemy : Entity
         if (collision.gameObject.tag.Equals("PlayerBody"))
         {
             collision.gameObject.GetComponent<Entity>().TakeDamage(Damage);
+        }
+    }
+
+
+    IEnumerator takingDamage()
+    {
+        var _initialColor = monsterSprite.color;
+        var _color = new Color(1, 0, 0, 0.2f);
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (i % 2 == 0)
+                monsterSprite.color = _color;
+            else
+                monsterSprite.color = _initialColor;
+            yield return new WaitForSeconds(0.1f);
+
         }
     }
 }
