@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6055b649f8878c848a49d7f6a492125e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletGameObject: {fileID: 5072455719455542486, guid: c32176d08703998448cffad529de3474, type: 3}
-  fireRate: 1
+  BulletGameObject: {fileID: 5072455719455542486, guid: 987ed1b7f67460f41b1875f80b8747b3, type: 3}
+  fireRate: 2
   canon: {fileID: 8874997734466268249}
   animator: {fileID: 8874997732578446124}
 --- !u!212 &8874997732578446113
