@@ -138,7 +138,11 @@ public class WaveSpawner : MonoBehaviour
     {
         Debug.Log("Enemy Spawn : " + _enemy);
 
-        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        int i = Random.Range(0, spawnPoints.Length);
+
+        Transform _sp = spawnPoints[i];
+
+        spawnPoints[i].gameObject.GetComponentInChildren<ParticleSystem>().Play();
 
         Instantiate(_enemy, _sp.position, _sp.rotation);
 
