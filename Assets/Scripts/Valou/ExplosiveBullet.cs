@@ -23,6 +23,10 @@ public class ExplosiveBullet : Bullet
             }
         }
 
-        Destroy(gameObject);
+        Animator animator = this.gameObject.GetComponent<Animator>();
+        animator.SetBool("toDestroy", true);
+        this.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        //Destroy(gameObject);
     }
 }

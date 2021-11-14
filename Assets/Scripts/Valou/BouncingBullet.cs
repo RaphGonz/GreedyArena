@@ -12,7 +12,12 @@ public class BouncingBullet : Bullet
         if (collision.collider.transform.tag.Equals(TargetTag))
         {
             collision.gameObject.GetComponent<Entity>().TakeDamage(Damage);
-            Destroy(gameObject);
+
+            Animator animator = this.gameObject.GetComponent<Animator>();
+            animator.SetBool("toDestroy", true);
+            this.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            //Destroy(gameObject);
         }
     }
 }
