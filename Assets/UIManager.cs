@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 
     public void SetDialogueText(string sentence)
     {
-        dialogueTextUI.GetComponent<Text>().text = sentence;
+        dialogueTextUI.GetComponent<TextMeshProUGUI>().text = sentence;
     }
 
     public void DisableDialogue()

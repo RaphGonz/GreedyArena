@@ -3541,6 +3541,7 @@ MonoBehaviour:
   - {fileID: 797311930}
   - {fileID: 257138945}
   timeBetweenWaves: 5
+  uiManager: {fileID: 591309087}
 --- !u!1 &1778371299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4780,6 +4781,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6774261139187505556, guid: 166fc3defcac1bc4f9d49686cf4bab39, type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 591309087}
     - target: {fileID: 6774261139187505567, guid: 166fc3defcac1bc4f9d49686cf4bab39, type: 3}
       propertyPath: m_Name
       value: Player
