@@ -108,6 +108,7 @@ public class WaveSpawner : MonoBehaviour
         {
             Debug.Log("ALL WAVES COMPLETED");
             gameObject.SetActive(false);
+            uiManager.Victory();
             return;
         }
 
