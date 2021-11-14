@@ -6,6 +6,8 @@ public abstract class Weapon : MonoBehaviour
 {
     [SerializeField]
     protected GameObject BulletGameObject;
+
+    public int type;
     
     public int fireRate;
 
@@ -60,4 +62,5 @@ public abstract class Weapon : MonoBehaviour
     {
 
     }
+
 }

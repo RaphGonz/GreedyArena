@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class RacoonManager : MonoBehaviour
 {
     [SerializeField] float timeDurationBeforeAnimation = 5;
@@ -18,6 +20,7 @@ public class RacoonManager : MonoBehaviour
 
 
     [SerializeField] List<GameObject> weaponList;
+    public bool[] weaponTypeList;
 
     public Animator animator;
 
@@ -29,6 +32,7 @@ public class RacoonManager : MonoBehaviour
         stolen = false;
         initialPosition = transform.position;
         weaponList = new List<GameObject>(10);
+        weaponTypeList = new bool[3] {false, false, false};
     }
 
     // Update is called once per frame
@@ -100,6 +104,7 @@ public class RacoonManager : MonoBehaviour
             inAnimation = true;
             timeStart = Time.time;
             weaponList.Add(collision.gameObject);
+            weaponTypeList[collision.gameObject.GetComponent<Weapon>().type] = true;
             collision.gameObject.SetActive(false);
         }
     }

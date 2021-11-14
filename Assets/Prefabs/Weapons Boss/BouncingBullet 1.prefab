@@ -4952,4 +4952,4 @@ MonoBehaviour:
   Speed: 5
   Damage: 3
   Lifetime: 10
-  TargetTag: Enemy
+  TargetTag: PlayerBody

@@ -16,10 +16,10 @@ public class ExplosiveBullet : Bullet
         Physics2D.OverlapCircle(collision.GetContact(0).point, ExplosionRadius, new ContactFilter2D(), result);
         foreach (var col in result)
         {
-            if (col.transform.tag.Equals(TargetTag))
+            if (col && col.transform.tag.Equals(TargetTag))
             {
-                col.gameObject.GetComponent<Entity>().TakeDamage(Damage);
-                
+                Entity tmp = col.transform.gameObject.GetComponent<Entity>();
+                tmp.TakeDamage(Damage);
             }
         }
 
