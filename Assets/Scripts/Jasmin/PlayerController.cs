@@ -43,6 +43,8 @@ public class PlayerController : Entity
     {
         _health = maxHealth;
         _maskSolid = LayerMask.GetMask("Solid", "SolidGround");
+
+        uiManager.SetMaxHealth(_health);
     }
 
     // Update is called once per frame
@@ -206,6 +208,9 @@ public class PlayerController : Entity
         {
             StartCoroutine(inVulnerabilityFrames());
             _health -= damage;
+
+            uiManager.SetHealth(_health);
+
             Debug.Log(damage + " point(s) de vie perdu(s) : current health = " + _health);
             if (_health <= 0)
             {
