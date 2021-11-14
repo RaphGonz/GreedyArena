@@ -1448,6 +1448,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5882353
       objectReference: {fileID: 0}
+    - target: {fileID: 1208306468358155293, guid: d16b17faa713ff448bfc2fd848d12782, type: 3}
+      propertyPath: victoryScreen
+      value: 
+      objectReference: {fileID: 2090363359}
     - target: {fileID: 1289273874725709510, guid: d16b17faa713ff448bfc2fd848d12782, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -11098,7 +11102,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -11452,6 +11456,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2090363359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6643819288635639163, guid: d16b17faa713ff448bfc2fd848d12782, type: 3}
+  m_PrefabInstance: {fileID: 998767852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119760091
 GameObject:
   m_ObjectHideFlags: 0

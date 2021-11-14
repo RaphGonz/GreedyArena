@@ -146,10 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  Damage: 5
+  Damage: 10
   Lifetime: 8
   TargetTag: Enemy
-  explosion: {fileID: 0}
+  explosion: {fileID: 5810010500112611932, guid: ca2ccfe2284cdff46a450b720ce03378, type: 3}
   ExplosionRadius: 3
 --- !u!95 &5402511189708143549
 Animator:

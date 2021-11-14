@@ -10,7 +10,7 @@ public class ExplosiveBullet : Bullet
     public float ExplosionRadius;
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        //explosion.Play();
+        Instantiate(explosion, transform.position, Quaternion.identity);
 
         Collider2D[] result = new Collider2D[10];
         Physics2D.OverlapCircle(collision.GetContact(0).point, ExplosionRadius, new ContactFilter2D(), result);

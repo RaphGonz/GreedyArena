@@ -176,6 +176,8 @@ MonoBehaviour:
   - {x: 0, y: 2}
   - {x: 20, y: 2}
   tpCooldown: 15
+  invulnerable: 0
+  bossColor: {fileID: 722239888808875777}
 --- !u!95 &2640966299122714052
 Animator:
   serializedVersion: 3
