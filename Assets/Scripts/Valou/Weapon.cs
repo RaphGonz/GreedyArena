@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
@@ -17,7 +18,8 @@ public abstract class Weapon : MonoBehaviour
 
     public Animator animator;
 
-
+    protected AudioManager _audioManager;
+    
     private bool start = false;
 
     void Start()
@@ -25,12 +27,32 @@ public abstract class Weapon : MonoBehaviour
         
     }
 
+    private void playSound()
+    {
+        if (BulletGameObject.GetComponent<Bullet>().GetType() == typeof(StandardBullet))
+        {
+            _audioManager.Play("BasicGun");
+        }
+        else if (BulletGameObject.GetComponent<Bullet>().GetType() == typeof(BouncingBullet))
+        {
+            _audioManager.Play("Laser");
+        }
+        else if (BulletGameObject.GetComponent<Bullet>().GetType() == typeof(PiercingBullet))
+        {
+            _audioManager.Play("Sniper");
+        }
+        else
+        {
+            _audioManager.Play("Launch");
+        }
+    }
+
     public void Shoot(Vector2 direction)
     {
-        //À mettre dans le void Start quand il fonctionnera (quand la classe ne sera plus abstraite).
+        //ï¿½ mettre dans le void Start quand il fonctionnera (quand la classe ne sera plus abstraite).
         if (!start)
         {
-            //isHeld devra commencer à false
+            //isHeld devra commencer ï¿½ false
             animator.SetBool("isHeld", true);
             animator.SetBool("isShooting", false);
             start = true;
@@ -41,6 +63,7 @@ public abstract class Weapon : MonoBehaviour
         {
             StartCoroutine(shootingAnimation());
             // fire bullet
+            playSound();
             GameObject newBulletGameObject = Instantiate(BulletGameObject, canon.position, transform.rotation);
             Bullet newBullet = newBulletGameObject.GetComponent<Bullet>();
             newBullet.gameObject.GetComponent<Rigidbody2D>().AddForce(newBullet.Speed * direction.normalized, ForceMode2D.Impulse);

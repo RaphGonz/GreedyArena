@@ -7,7 +7,7 @@ public class StandardGun : Weapon
     // Start is called before the first frame update
     void Start()
     {
-        
+        _audioManager = FindObjectOfType<AudioManager>();
     }
     
 }
