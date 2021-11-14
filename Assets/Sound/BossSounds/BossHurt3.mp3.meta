@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b907c3f14e886a646b00b0493dbc90ac
+=======
+guid: 0833ba9631da6f744a5e1db95d5b6130
+>>>>>>> Romain
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
