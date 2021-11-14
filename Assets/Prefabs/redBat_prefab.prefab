@@ -50,7 +50,7 @@ MonoBehaviour:
   maxHealth: 7
   _health: 0
   Target: {fileID: 6774261139187505567, guid: 166fc3defcac1bc4f9d49686cf4bab39, type: 3}
-  Damage: 0
+  Damage: 1
   Speed: 6
   monsterSprite: {fileID: 5026669121013312957}
 --- !u!61 &5026669121013312952
