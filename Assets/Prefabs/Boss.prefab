@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7885128070169727013}
   - component: {fileID: 7885128070169727014}
   - component: {fileID: 8629855951089514253}
-  - component: {fileID: 2879470386906502011}
   - component: {fileID: 722239888808875777}
+  - component: {fileID: 7758386983701920925}
+  - component: {fileID: 6580529811174550461}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7885128070169727015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.415195, y: 5.6634636, z: -11.287586}
+  m_LocalPosition: {x: 10.415195, y: 5.6634636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,28 +76,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2879470386906502011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7885128070169727015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f86f0ecc42bd34d94d1f75baa99845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  MinRange: 0
-  MaxRange: 0
-  Target: {fileID: 0}
 --- !u!212 &722239888808875777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -148,3 +133,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7758386983701920925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885128070169727015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b66ad3ce8ac4494d8584ff31d7afb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 8368766024962209797, guid: 1794a87f39730db458c08375ffdd7928, type: 3}
+  - {fileID: 8874997732578446127, guid: 7ec4b45b6c30d1d4e82b807bce5fa2ab, type: 3}
+  - {fileID: 9161923558760136447, guid: 402ab0f65c0cfe84ca6ec86b60b8e9d9, type: 3}
+  offset:
+  - {x: -2, y: 0}
+  - {x: 0, y: 2}
+  - {x: 0, y: -2}
+  player: {fileID: 0}
+--- !u!114 &6580529811174550461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885128070169727015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679c7d73c48b78a418ad0528cd3d53c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  _health: 20
+  tpPositions:
+  - {x: 5, y: 5}
+  - {x: -5, y: 5}
+  - {x: 0, y: 0}
+  tpCooldown: 15

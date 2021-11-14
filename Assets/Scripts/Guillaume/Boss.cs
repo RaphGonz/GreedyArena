@@ -7,74 +7,31 @@ using UnityEngine;
 
 public class Boss : Entity
 {
-    public Weapon[] Weapons;
+    public Vector2[] tpPositions;
 
-    private Weapon[] _activeWeapons;
-
-    public float MinRange;
-
-    public float MaxRange;
-
-    public GameObject Target;
-
-    private Vector2 _shootingDirection;
-
-    private StringBuilder _attitude = new StringBuilder("hostile");
-
+    public float tpCooldown = 15f;
+    private float timeStart;
+    private int currentPosition = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        timeStart = Time.time;
+        transform.position = tpPositions[currentPosition];
+        _health = maxHealth;
     }
 
-    // Update is called once per frame
-    private void RotatePivotPoint()
-    {
-        transform.localScale = new Vector2(1, 1);
-
-        _shootingDirection =
-            (Target.transform.position -
-             new Vector3(transform.position.x, transform.position.y, 0) * transform.localScale.x).normalized;
-        float angleShoot = Vector2.SignedAngle(new Vector2(1, 0), _shootingDirection);
-
-
-        if (angleShoot > 90 || angleShoot < -90)
-        {
-            gameObject.transform.localScale = new Vector2(-1, 1);
-        }
-        else
-        {
-            gameObject.transform.localScale = new Vector2(1, 1);
-        }
-        //
-        // Quaternion rotationArms = Quaternion.Euler(0, 0, angleShoot);
-        // pivotPoint.transform.rotation = rotationArms;
-
-        /*
-        Quaternion rotationArms = Quaternion.Euler(0,0,angleArms);
-        pivotPoint.transform.rotation = rotationArms;
-        */
-    }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Time.time - timeStart > tpCooldown)
         {
-            Shoot();
+            currentPosition = (currentPosition + 1) % tpPositions.Length;
+            transform.position = tpPositions[currentPosition];
+            timeStart = Time.time;
         }
     }
 
-
-    public void Shoot()
-    {
-        if (_activeWeapons.Length > 0)
-        {
-            foreach (var weapon in _activeWeapons)
-            {
-                weapon.Shoot(_shootingDirection);
-            }
-        }
-    }
 
     public override void TakeDamage(int damage)
     {
