@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public GameObject gameOverScreen;
+    public GameObject victoryScreen;
     public GameObject dialogueScreen;
     public GameObject dialogueTextUI;
     public GameObject pauseScreen;
@@ -18,6 +19,13 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         gameOverScreen.SetActive(true);
+        healthBar.gameObject.SetActive(false);
+    }
+
+    public void Victory()
+    {
+        Time.timeScale = 0;
+        victoryScreen.SetActive(true);
         healthBar.gameObject.SetActive(false);
     }
 
