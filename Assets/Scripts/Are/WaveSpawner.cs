@@ -46,7 +46,7 @@ public class WaveSpawner : MonoBehaviour
         waveCountdown = timeBetweenWaves;
 
         uiManager.EnableDialogue(5);
-        uiManager.SetDialogueText("Allez, tue les tous ! Une meilleure arme sera livree tout a l'heure...");
+        uiManager.SetDialogueText("allez, tue les tous ! une meilleure arme sera livree tout a l'heure...");
     }
 
     private void Update()
@@ -85,16 +85,24 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave < 3)
         {
             uiManager.EnableDialogue(3);
-            uiManager.SetDialogueText("Oh une nouvelle arme ! Va la prendre ! Je ramasse celle que tu jette t'inquiète !");
+            uiManager.SetDialogueText("oh une nouvelle arme ! va la prendre ! je ramasse celle que tu jette t'inquiete !");
 
             instantiatedWeapon = Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
 
             StartCoroutine(DespawnWeapon());
         }
+        if (nextWave == 5)
+        {
+            uiManager.EnableDialogue(3);
+            uiManager.SetDialogueText("AHAH ! t'as vraiment cru que l'agence allait recruter un raton laveur ? merci pour les armes !");
+        }
+        
         
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
+
+        
 
         if (nextWave + 1 > waves.Length - 1)
         {
