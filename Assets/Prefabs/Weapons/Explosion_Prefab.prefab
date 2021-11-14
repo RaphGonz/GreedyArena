@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletGameObject: {fileID: 5072455719455542486, guid: 21d43028b1becc3428a91acc32e22685, type: 3}
+  type: 2
   fireRate: 1
   canon: {fileID: 6051675031740866714}
   animator: {fileID: 5435131194844775625}
