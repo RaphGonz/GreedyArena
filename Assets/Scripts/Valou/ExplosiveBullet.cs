@@ -22,7 +22,7 @@ public class ExplosiveBullet : Bullet
                 tmp.TakeDamage(Damage);
             }
         }
-
+        FindObjectOfType<AudioManager>().Play("Explosion");
         Animator animator = this.gameObject.GetComponent<Animator>();
         animator.SetBool("toDestroy", true);
         this.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
