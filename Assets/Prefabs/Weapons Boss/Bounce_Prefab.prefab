@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8874997732578446124}
   - component: {fileID: 8092872398993576649}
   - component: {fileID: 930808727044784404}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Bounce_Prefab
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6055b649f8878c848a49d7f6a492125e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletGameObject: {fileID: 5072455719455542486, guid: 987ed1b7f67460f41b1875f80b8747b3, type: 3}
+  BulletGameObject: {fileID: 5072455719455542486, guid: b51cd89a9dbda7c41adae0109e810e8d, type: 3}
+  type: 0
   fireRate: 4
   canon: {fileID: 8874997734466268249}
   animator: {fileID: 8874997732578446124}
@@ -130,7 +131,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8874997732578446127}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -13,26 +14,41 @@ public class WeaponManager : MonoBehaviour
     private GameObject[] currentWeapons;
     private Vector2 _shootingDirection;
 
+    private RacoonManager racoonManager;
+
     [SerializeField] private GameObject player;
 
-    int iteration = 1;
+
+
 
     
 
     void Start()
     {
         player = GameObject.Find("Player");
+        racoonManager = GameObject.Find("Racoon").GetComponent<RacoonManager>();
 
-        currentWeapons = new GameObject[prefabs.Length];
-        weaponComponents = new Weapon[prefabs.Length];
+        bool[] weaponsAvailable = racoonManager.weaponTypeList;
+        int N = weaponsAvailable.Where(c => c).Count();
+        Debug.Log(weaponsAvailable.Length);
+
+
+        currentWeapons = new GameObject[N];
+        weaponComponents = new Weapon[N];
 
         //Todo : seuls les armes ramassées par le racoon doivent être instanciées.
 
+        int j = 0;
+
         for (int i = 0; i < prefabs.Length; i++)
         {
-            currentWeapons[i] = Instantiate(prefabs[i], transform.position + new Vector3(offset[i].x, offset[i].y), prefabs[i].transform.rotation);
-            currentWeapons[i].transform.parent = gameObject.transform;
-            weaponComponents[i] = currentWeapons[i].GetComponent<Weapon>();
+            if (weaponsAvailable[i])
+            {
+                currentWeapons[j] = Instantiate(prefabs[i], transform.position + new Vector3(offset[i].x, offset[i].y), prefabs[i].transform.rotation);
+                currentWeapons[j].transform.parent = gameObject.transform;
+                weaponComponents[j] = currentWeapons[j].GetComponent<Weapon>();
+                j++;
+            }
         }
     }
 

@@ -97,7 +97,7 @@ MonoBehaviour:
   Speed: 10
   Damage: 2
   Lifetime: 1
-  TargetTag: Enemy
+  TargetTag: PlayerBody
 --- !u!212 &780572988792853798
 SpriteRenderer:
   m_ObjectHideFlags: 0

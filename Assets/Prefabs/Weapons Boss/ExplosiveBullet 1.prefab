@@ -4952,6 +4952,6 @@ MonoBehaviour:
   Speed: 2
   Damage: 5
   Lifetime: 10
-  TargetTag: Enemy
+  TargetTag: PlayerBody
   explosion: {fileID: 0}
   ExplosionRadius: 10
