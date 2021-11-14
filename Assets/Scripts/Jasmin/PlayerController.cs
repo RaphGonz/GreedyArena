@@ -31,6 +31,10 @@ public class PlayerController : Entity
     // body of the player (sprite)
     [SerializeField] GameObject body;
 
+    //UI Manager : to notify death
+
+    [SerializeField] UIManager uiManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -199,7 +203,7 @@ public class PlayerController : Entity
         if (_health <= 0)
         {
             Debug.Log("Game Over !!");
-            //TODO: Activer le Game Over
+            uiManager.GameOver();
         }
     }
 }

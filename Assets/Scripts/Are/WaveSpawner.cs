@@ -30,6 +30,8 @@ public class WaveSpawner : MonoBehaviour
 
     private SpawnState state = SpawnState.COUNTING;
 
+    public UIManager uiManager;
+
     private void Start()
     {
         if (spawnPoints.Length == 0)
@@ -38,6 +40,9 @@ public class WaveSpawner : MonoBehaviour
         }
 
         waveCountdown = timeBetweenWaves;
+
+        uiManager.EnableDialogue(5);
+        uiManager.SetDialogueText("Aller tu les tous !");
     }
 
     private void Update()
@@ -72,6 +77,10 @@ public class WaveSpawner : MonoBehaviour
     void WaveCompleted()
     {
         Debug.Log("Wave completed");
+
+        uiManager.EnableDialogue(3);
+        uiManager.SetDialogueText("Oh une nouvelle arme !");
+
         Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
 
         state = SpawnState.COUNTING;
