@@ -55,7 +55,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7233917458937987227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   Damage: 2
-  Lifetime: 1
+  Lifetime: 4
   TargetTag: Enemy
 --- !u!212 &780572988792853798
 SpriteRenderer:

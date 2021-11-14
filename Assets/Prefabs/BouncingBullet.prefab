@@ -4951,5 +4951,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Damage: 2
-  Lifetime: 2
+  Lifetime: 8
   TargetTag: Enemy
