@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 722239888808875777}
   - component: {fileID: 7758386983701920925}
   - component: {fileID: 6580529811174550461}
+  - component: {fileID: 2640966299122714052}
   m_Layer: 7
   m_Name: Boss
   m_TagString: Enemy
@@ -173,3 +174,22 @@ MonoBehaviour:
   - {x: 0, y: 2}
   - {x: 20, y: 2}
   tpCooldown: 15
+--- !u!95 &2640966299122714052
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885128070169727015}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f90a34780de43434fa082a26a5114e19, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
