@@ -4950,7 +4950,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  Damage: 5
-  Lifetime: 3
+  Damage: 3
+  Lifetime: 8
   TargetTag: Enemy
-  ExplosionRadius: 10
+  explosion: {fileID: 0}
+  ExplosionRadius: 3

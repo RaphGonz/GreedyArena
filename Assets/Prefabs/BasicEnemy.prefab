@@ -47,11 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c290b4f29ac9c6a479107617910a6fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 2
   _health: 0
   Target: {fileID: 6774261139187505567, guid: 166fc3defcac1bc4f9d49686cf4bab39, type: 3}
   Destination: {x: 0, y: 0}
-  Damage: 0
+  Damage: 1
   Speed: 3
 --- !u!61 &8212411976902543895
 BoxCollider2D:
