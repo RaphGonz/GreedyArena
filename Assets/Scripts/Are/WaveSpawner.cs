@@ -88,6 +88,7 @@ public class WaveSpawner : MonoBehaviour
             uiManager.SetDialogueText("oh une nouvelle arme ! va la prendre ! je ramasse celle que tu jette t'inquiete !");
 
             instantiatedWeapon = Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
+            weaponSpawn.gameObject.GetComponentInChildren<ParticleSystem>().Play();
 
             StartCoroutine(DespawnWeapon());
         }
