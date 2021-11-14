@@ -9,6 +9,8 @@ public class Boss : Entity
 {
     public Vector2[] tpPositions;
 
+    private GameObject raccoon;
+
     public float tpCooldown = 15f;
     private float timeStart;
     private int currentPosition = 0;
@@ -22,6 +24,15 @@ public class Boss : Entity
         timeStart = Time.time;
         transform.position = tpPositions[currentPosition];
         _health = maxHealth;
+        raccoon = GameObject.Find("Racoon");
+        if (raccoon != null)
+        {
+            raccoon.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Raccoon not found");
+        }
     }
 
 
