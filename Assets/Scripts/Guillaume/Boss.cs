@@ -21,6 +21,7 @@ public class Boss : Entity
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         timeStart = Time.time;
         transform.position = tpPositions[currentPosition];
         _health = maxHealth;
@@ -51,6 +52,8 @@ public class Boss : Entity
     {
         if (!invulnerable)
         {
+            int rNumber = UnityEngine.Random.Range(1,5);
+            audioManager.Play("BossHurt" + rNumber);
             StartCoroutine(inVulnerabilityFrames());
             _health -= damage;
 

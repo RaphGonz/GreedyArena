@@ -36,8 +36,6 @@ public class PlayerController : Entity
 
     [SerializeField] UIManager uiManager;
 
-    private AudioManager audioManager;
-
     //particle
 
     public ParticleSystem jumpParticle;
@@ -217,8 +215,8 @@ public class PlayerController : Entity
         {
             StartCoroutine(inVulnerabilityFrames());
             _health -= damage;
-
-            audioManager.Play("PlayerHurt1");
+            int rNumber = UnityEngine.Random.Range(1, 3);
+            audioManager.Play("PlayerHurt" + rNumber);
             uiManager.SetHealth(_health);
 
             Debug.Log(damage + " point(s) de vie perdu(s) : current health = " + _health);

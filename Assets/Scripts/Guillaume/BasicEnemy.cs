@@ -11,7 +11,6 @@ public class BasicEnemy : Entity
     private Transform _targetTransform;
     public int Damage;
     public float Speed;
-    private AudioManager audioManager;
 
     public SpriteRenderer monsterSprite;
 
@@ -39,11 +38,12 @@ public class BasicEnemy : Entity
 
     public override void TakeDamage(int damage)
     {
-        audioManager.Play("EnemyHurt1");
         StartCoroutine(takingDamage());
         _health -= damage;
         if (_health <= 0)
         {
+            int rNumber = UnityEngine.Random.Range(1, 3);
+            audioManager.Play("EnemyHurt" + rNumber);
             Destroy(gameObject);
         }
     }
