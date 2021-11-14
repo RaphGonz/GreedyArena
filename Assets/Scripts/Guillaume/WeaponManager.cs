@@ -59,7 +59,13 @@ public class WeaponManager : MonoBehaviour
         {
             _shootingDirection = player.transform.position - currentWeapons[i].transform.position;
             weaponComponents[i].Shoot(_shootingDirection);
+
+            float angleWeapon = Vector2.SignedAngle(Vector2.right, _shootingDirection);
+
+            currentWeapons[i].transform.rotation = Quaternion.Euler(0, 0, angleWeapon);
         }
+
+
     }
 
 
