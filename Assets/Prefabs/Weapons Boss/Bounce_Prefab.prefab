@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletGameObject: {fileID: 5072455719455542486, guid: b51cd89a9dbda7c41adae0109e810e8d, type: 3}
   type: 0
-  fireRate: 2
+  fireRate: 1
   canon: {fileID: 8874997734466268249}
   animator: {fileID: 8874997732578446124}
 --- !u!212 &8874997732578446113

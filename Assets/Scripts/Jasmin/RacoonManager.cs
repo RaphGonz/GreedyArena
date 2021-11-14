@@ -32,7 +32,7 @@ public class RacoonManager : MonoBehaviour
         stolen = false;
         initialPosition = transform.position;
         weaponList = new List<GameObject>(10);
-        weaponTypeList = new bool[3] {false, false, false};
+        //weaponTypeList = new bool[4] {false, false, false, false};
     }
 
     // Update is called once per frame
