@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6055b649f8878c848a49d7f6a492125e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletGameObject: {fileID: 5072455719455542486, guid: c32176d08703998448cffad529de3474, type: 3}
+  BulletGameObject: {fileID: 7444729694386510993, guid: 70034cb705ecd8d4690ca5f42fa2c1e7, type: 3}
   fireRate: 1
   canon: {fileID: 8368766025793314675}
   animator: {fileID: 8368766024962209796}

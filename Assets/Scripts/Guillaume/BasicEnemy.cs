@@ -9,11 +9,10 @@ public class BasicEnemy : Entity
 {
     public GameObject Target;
     private Transform _targetTransform;
-
-    public Vector2 Destination;
-
     public int Damage;
     public float Speed;
+
+    private Rigidbody2D _body;
 
 
     // Start is called before the first frame update
@@ -23,24 +22,15 @@ public class BasicEnemy : Entity
         Debug.Log("Pouet pouet cacahuète | _health =" +_health+" | maxHealth "+maxHealth);
         Target = GameObject.Find("Player");
         _targetTransform = Target.GetComponent<Transform>();
-        Destination = _targetTransform.position;
-        Debug.Log("Speed  = " + Speed + " | Last Destination = " + Destination);
+        _body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float step = Time.deltaTime * Speed;
-        Behaviour(Time.deltaTime);
-    }
-
-    private void Behaviour(float deltaTime)
-    {
-        var position = transform.position;
-        Vector3 lastPosition = position;
-        float step = Speed * deltaTime;
-        Vector3 newPosition = Vector3.MoveTowards(position, _targetTransform.position, step);
-        transform.position = newPosition;
+        _body.velocity = Speed * _body.velocity.normalized;
+        Vector2 direction = (_targetTransform.position - transform.position);
+        _body.AddForce(direction.normalized, ForceMode2D.Impulse);
     }
 
     public override void TakeDamage(int damage)
@@ -57,7 +47,7 @@ public class BasicEnemy : Entity
         Debug.Log(collision.gameObject);
         if (collision.gameObject.tag.Equals("PlayerBody"))
         {
-            collision.gameObject.GetComponent<Entity>().TakeDamage(1);
+            collision.gameObject.GetComponent<Entity>().TakeDamage(Damage);
         }
     }
 }

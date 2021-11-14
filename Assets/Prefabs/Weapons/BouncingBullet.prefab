@@ -4819,7 +4819,7 @@ GameObject:
   - component: {fileID: -1536622200821704136}
   m_Layer: 10
   m_Name: BouncingBullet
-  m_TagString: PlayerBody
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4951,5 +4951,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Damage: 2
-  Lifetime: 2
+  Lifetime: 8
   TargetTag: Enemy

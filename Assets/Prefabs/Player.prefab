@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebe9fc15c0a94044b31204e59bf542d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   playerController: {fileID: 6774261139187505556}
 --- !u!1 &4282843492675324212
 GameObject:
@@ -137,7 +138,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b03bd3b25bceb294199b1f00d9036867, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4528302, g: 0.31826273, b: 0.31826273, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -400,6 +401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a96d52d123fdb54c877d12deefce3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  _health: 0
   playerRigidbody: {fileID: 6774261139187505555}
   playerCollider: {fileID: 6774261139187505554}
   pivotPoint: {fileID: 6774261138614051810}
