@@ -18,8 +18,12 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] weapon;
     public Transform weaponSpawn;
 
+    Transform instantiatedWeapon;
+
     public Wave[] waves;
     private int nextWave = 0;
+
+    public float weaponCooldown = 10;
 
     public Transform[] spawnPoints;
 
@@ -83,7 +87,9 @@ public class WaveSpawner : MonoBehaviour
             uiManager.EnableDialogue(3);
             uiManager.SetDialogueText("Oh une nouvelle arme ! Va la prendre ! Je ramasse celle que tu jette t'inquiète !");
 
-            Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
+            instantiatedWeapon = Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
+
+            StartCoroutine(DespawnWeapon());
         }
         
 
@@ -140,6 +146,17 @@ public class WaveSpawner : MonoBehaviour
 
         Instantiate(_enemy, _sp.position, _sp.rotation);
 
+    }
+
+    IEnumerator DespawnWeapon()
+    {
+        yield return new WaitForSeconds(weaponCooldown);
+
+        Debug.Log("on est en coroutine (arme mourir)");
+        if (!instantiatedWeapon.gameObject.GetComponent<Rigidbody2D>().isKinematic)
+        {
+            Destroy(instantiatedWeapon.gameObject);
+        }
     }
 
 }
