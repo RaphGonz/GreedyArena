@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110f0dc44dd89a841b0fd4ad4812bf8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
-  Damage: 3
+  Speed: 10
+  Damage: 5
   Lifetime: 8
   TargetTag: Enemy
   explosion: {fileID: 0}

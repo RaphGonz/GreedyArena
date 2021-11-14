@@ -155,6 +155,7 @@ MonoBehaviour:
   initialPosition: {x: 0, y: 0}
   rigidbody: {fileID: 4788512772842067688}
   weaponList: []
+  weaponTypeList: 00000000
   animator: {fileID: 8768883087561594086}
 --- !u!95 &8768883087561594086
 Animator:

@@ -148,12 +148,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 8368766024962209797, guid: 1794a87f39730db458c08375ffdd7928, type: 3}
+  - {fileID: 8865189745977348868, guid: 51e6ffc82630793489917854d67876d7, type: 3}
   - {fileID: 8874997732578446127, guid: 7ec4b45b6c30d1d4e82b807bce5fa2ab, type: 3}
   - {fileID: 9161923558760136447, guid: 402ab0f65c0cfe84ca6ec86b60b8e9d9, type: 3}
   offset:
   - {x: -2, y: 0}
   - {x: 0, y: 2}
   - {x: 0, y: -2}
+  - {x: 2, y: 0}
   player: {fileID: 0}
 --- !u!114 &6580529811174550461
 MonoBehaviour:

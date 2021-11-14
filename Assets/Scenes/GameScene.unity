@@ -2658,7 +2658,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -11565,6 +11565,26 @@ PrefabInstance:
       propertyPath: waves.Array.size
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7413102069514664049, guid: a93c564b9c1d63648b91dee5d5f0b278, type: 3}
+      propertyPath: weapon.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413102069514664049, guid: a93c564b9c1d63648b91dee5d5f0b278, type: 3}
+      propertyPath: weapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 3732050613078188267, guid: 4c1f77cb0e5edf345a946dfc64da864c, type: 3}
+    - target: {fileID: 7413102069514664049, guid: a93c564b9c1d63648b91dee5d5f0b278, type: 3}
+      propertyPath: weapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 8874997732578446115, guid: e042d5c0d73e25b4d903d409abe11a92, type: 3}
+    - target: {fileID: 7413102069514664049, guid: a93c564b9c1d63648b91dee5d5f0b278, type: 3}
+      propertyPath: weapon.Array.data[2]
+      value: 
+      objectReference: {fileID: 4028509137784114448, guid: ad345872137d2f443b8314e650775ca0, type: 3}
+    - target: {fileID: 7413102069514664049, guid: a93c564b9c1d63648b91dee5d5f0b278, type: 3}
+      propertyPath: weapon.Array.data[3]
+      value: 
+      objectReference: {fileID: 8368766024962209801, guid: e620c1551326ea24b81ee0286ed3edff, type: 3}
     - target: {fileID: 7413102069514664049, guid: a93c564b9c1d63648b91dee5d5f0b278, type: 3}
       propertyPath: waves.Array.data[5].rate
       value: 1
