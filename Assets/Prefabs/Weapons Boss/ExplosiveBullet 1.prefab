@@ -4953,5 +4953,5 @@ MonoBehaviour:
   Damage: 5
   Lifetime: 2
   TargetTag: PlayerBody
-  explosion: {fileID: 0}
+  explosion: {fileID: 5810010500112611932, guid: ca2ccfe2284cdff46a450b720ce03378, type: 3}
   ExplosionRadius: 2
