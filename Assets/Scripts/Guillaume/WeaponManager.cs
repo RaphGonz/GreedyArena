@@ -62,7 +62,18 @@ public class WeaponManager : MonoBehaviour
 
             float angleWeapon = Vector2.SignedAngle(Vector2.right, _shootingDirection);
 
+            if (angleWeapon > 90 || angleWeapon < -90)
+            {
+                currentWeapons[i].transform.localScale = new Vector2(-1, 1);
+                angleWeapon += 180;
+            }
+            else
+            {
+                currentWeapons[i].transform.localScale = new Vector2(1, 1);
+            }
+
             currentWeapons[i].transform.rotation = Quaternion.Euler(0, 0, angleWeapon);
+
         }
 
 
