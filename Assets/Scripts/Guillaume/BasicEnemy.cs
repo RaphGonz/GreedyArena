@@ -11,6 +11,7 @@ public class BasicEnemy : Entity
     private Transform _targetTransform;
     public int Damage;
     public float Speed;
+    private AudioManager audioManager;
 
     public SpriteRenderer monsterSprite;
 
@@ -20,6 +21,7 @@ public class BasicEnemy : Entity
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType < AudioManager > ();
         _health = maxHealth;
         Debug.Log("Pouet pouet cacahuète | _health =" +_health+" | maxHealth "+maxHealth);
         Target = GameObject.Find("Player");
@@ -37,6 +39,7 @@ public class BasicEnemy : Entity
 
     public override void TakeDamage(int damage)
     {
+        audioManager.Play("EnemyHurt1");
         StartCoroutine(takingDamage());
         _health -= damage;
         if (_health <= 0)

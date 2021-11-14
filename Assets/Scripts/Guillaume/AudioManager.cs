@@ -39,6 +39,8 @@ public class AudioManager : MonoBehaviour
     {
         //TODO : Entrer ici le nom du thème qu'on veut jouer au lancement de la scène. 
         //Play();
+        Debug.Log("Music playing");
+        Play("Theme");
     }
 
     /**

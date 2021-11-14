@@ -36,6 +36,8 @@ public class PlayerController : Entity
 
     [SerializeField] UIManager uiManager;
 
+    private AudioManager audioManager;
+
     //particle
 
     public ParticleSystem jumpParticle;
@@ -45,6 +47,7 @@ public class PlayerController : Entity
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         _health = maxHealth;
         _maskSolid = LayerMask.GetMask("Solid", "SolidGround");
 
@@ -215,6 +218,7 @@ public class PlayerController : Entity
             StartCoroutine(inVulnerabilityFrames());
             _health -= damage;
 
+            audioManager.Play("PlayerHurt1");
             uiManager.SetHealth(_health);
 
             Debug.Log(damage + " point(s) de vie perdu(s) : current health = " + _health);
