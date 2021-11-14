@@ -91,7 +91,7 @@ public class WaveSpawner : MonoBehaviour
 
             StartCoroutine(DespawnWeapon());
         }
-        if (nextWave == 5)
+        if (nextWave == 4)
         {
             uiManager.EnableDialogue(3);
             uiManager.SetDialogueText("AHAH ! t'as vraiment cru que l'agence allait recruter un raton laveur ? merci pour les armes !");
