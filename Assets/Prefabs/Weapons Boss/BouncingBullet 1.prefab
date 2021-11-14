@@ -4950,6 +4950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  Damage: 2
+  Damage: 3
   Lifetime: 10
   TargetTag: Enemy

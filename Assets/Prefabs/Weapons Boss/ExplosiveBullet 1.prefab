@@ -4951,7 +4951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2
   Damage: 5
-  Lifetime: 10
+  Lifetime: 2
   TargetTag: Enemy
   explosion: {fileID: 0}
-  ExplosionRadius: 10
+  ExplosionRadius: 2
