@@ -28,6 +28,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoints;
 
     public float timeBetweenWaves = 10f;
+    public int timeDialogue = 8;
     private float waveCountdown;
 
     private float searchCountdown = 1f;
@@ -84,7 +85,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWave < 4)
         {
-            uiManager.EnableDialogue(3);
+            uiManager.EnableDialogue(timeDialogue);
             uiManager.SetDialogueText("oh une nouvelle arme ! va la prendre ! je ramasse celle que tu jette t'inquiete !");
 
             instantiatedWeapon = Instantiate(weapon[nextWave], weaponSpawn.position, weaponSpawn.rotation);
@@ -94,7 +95,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if (nextWave == 4)
         {
-            uiManager.EnableDialogue(3);
+            uiManager.EnableDialogue(timeDialogue);
             uiManager.SetDialogueText("AHAH ! t'as vraiment cru que l'agence allait recruter un raton laveur ? merci pour les armes !");
         }
         
