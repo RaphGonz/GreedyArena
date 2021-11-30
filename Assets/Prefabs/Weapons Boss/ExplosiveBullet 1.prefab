@@ -4950,9 +4950,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110f0dc44dd89a841b0fd4ad4812bf8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
-  Damage: 5
-  Lifetime: 2
+  Speed: 3
+  Damage: 3
+  Lifetime: 4
   TargetTag: PlayerBody
   explosion: {fileID: 5810010500112611932, guid: ca2ccfe2284cdff46a450b720ce03378, type: 3}
   ExplosionRadius: 2

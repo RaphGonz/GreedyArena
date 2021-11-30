@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 10
   Damage: 3
-  Lifetime: 10
+  Lifetime: 6
   TargetTag: Enemy
 --- !u!50 &6782443470646310328
 Rigidbody2D:

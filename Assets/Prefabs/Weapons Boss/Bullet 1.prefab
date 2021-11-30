@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Damage: 2
-  Lifetime: 5
+  Lifetime: 10
   TargetTag: PlayerBody
 --- !u!50 &6782443470646310328
 Rigidbody2D:
